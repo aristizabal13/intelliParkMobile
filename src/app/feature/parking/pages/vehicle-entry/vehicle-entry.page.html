@@ -172,6 +172,28 @@
               </ion-select>
             </ion-item>
 
+            <ion-item>
+              <ion-input 
+                type="text" 
+                label="Marca" 
+                labelPlacement="stacked" 
+                placeholder="Ej. Renault"
+                formControlName="vehicle_brand" autocomplete="off" 
+                maxlength="50">
+              </ion-input>
+            </ion-item>
+            
+            <ion-item>
+              <ion-input 
+                type="text" 
+                label="Color" 
+                labelPlacement="stacked" 
+                placeholder="Ej. Gris" formControlName="vehicle_color"
+                autocomplete="off" 
+                maxlength="30">
+              </ion-input>
+            </ion-item>
+
           </ion-list>
 
           <ion-button
@@ -250,6 +272,20 @@
               <span>Tipo</span>
               <strong>
                 {{ entry.vehicle_type  }}
+              </strong>
+            </div>
+
+            <div class="result-item">
+              <span>Marca</span>
+              <strong>
+                {{ entry.vehicle_brand || 'No especificada' }}
+              </strong>
+            </div>
+            
+            <div class="result-item">
+              <span>Color</span>
+              <strong>
+                {{ entry.vehicle_color || 'No especificado' }}
               </strong>
             </div>
 

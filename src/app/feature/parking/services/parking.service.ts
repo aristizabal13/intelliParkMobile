@@ -26,6 +26,8 @@ interface CheckInApiRecord {
   vehicleId: number;
   plate: string;
   type: VehicleType;
+  brand?: string;
+  color?: string;
   entryTime: string;
   status: string;
 }
@@ -72,6 +74,8 @@ export class ParkingService {
             vehicle_id: response.data.vehicleId,
             vehicle_plate: response.data.plate,
             vehicle_type: response.data.type,
+            vehicle_brand: response.data.brand,
+            vehicle_color: response.data.color,
             parking_entry_time: response.data.entryTime,
             parking_status: response.data.status
           }

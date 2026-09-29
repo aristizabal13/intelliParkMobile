@@ -10,6 +10,8 @@ export type SupportedImageMimeType =
 export interface CheckInRequest {
   vehicle_plate: string;
   vehicle_type: VehicleType;
+  vehicle_brand?: string;
+  vehicle_color?: string;
 }
 
 /**
@@ -38,6 +40,8 @@ export interface ParkingRecord {
   vehicle_id?: number;
   vehicle_plate?: string;
   vehicle_type?: VehicleType;
+  vehicle_brand?: string;
+  vehicle_color?: string;
   parking_entry_time?: string;
   parking_exit_time?: string | null;
   parking_total_minutes?: number | null;

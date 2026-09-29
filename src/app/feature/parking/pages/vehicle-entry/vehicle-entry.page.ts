@@ -118,7 +118,9 @@ export class VehicleEntryPage {
     vehicle_type: this.formBuilder.nonNullable.control<VehicleType>(
       'carro',
       [Validators.required]
-    )
+    ),
+    vehicle_brand: [''],
+    vehicle_color: ['']
   });
 
   /**
@@ -254,7 +256,9 @@ export class VehicleEntryPage {
 
     const payload: CheckInRequest = {
       vehicle_plate: this.normalizePlate(formValue.vehicle_plate),
-      vehicle_type: formValue.vehicle_type
+      vehicle_type: formValue.vehicle_type,
+      vehicle_brand: formValue.vehicle_brand.trim(),
+      vehicle_color: formValue.vehicle_color.trim()
     };
 
     this.isSubmitting.set(true);
@@ -277,7 +281,9 @@ export class VehicleEntryPage {
 
           this.checkInForm.reset({
             vehicle_plate: '',
-            vehicle_type: 'carro'
+            vehicle_type: 'carro',
+            vehicle_brand: '',
+            vehicle_color: ''
           });
 
           this.resetCapturedPhoto();
